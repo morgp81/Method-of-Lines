@@ -9,7 +9,7 @@ delta_x = 1/N  # spatial step size
 sigma = 0.0001  # thermal diffusivity
 
 steps = 5000  # number of time steps
-dt = 0.1  # time step size
+dt = 0.025  # time step size
 
 x = np.linspace(0, 1, N+1) # initial condition: sine wave
 u = np.sin(2*np.pi*x) 
