@@ -6,7 +6,7 @@ def equation(u, sigma, dx):
     # boundary conditions
     dudt[0] = -sigma * (u[0] - u[-1]) / dx
 
-    for i in range(1, len(u)-1): #compute each point's derivative using the second spatial derivative
+    for i in range(1, len(u)): #compute each point's derivative using the second spatial derivative
         dudt[i] = -sigma * (
             u[i] - u[i-1]
         ) / dx

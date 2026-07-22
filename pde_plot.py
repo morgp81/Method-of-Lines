@@ -6,7 +6,7 @@ from rk_methods import euler, explicit_rk2, implicit_rk2
 # Parameters
 N = 100  # number of spatial points
 delta_x = 1/N  # spatial step size
-sigma = 1
+sigma = 0.1
 
 steps = 200  # number of time steps
 dt = 0.005  # time step size
