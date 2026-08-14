@@ -50,13 +50,11 @@ def implicit_rk2(inputs, diffeq, h, *params, maxIter=10, tol=1e-6):
     k1 = np.array(diffeq(inputs, *params))
     initialVals = inputs + k1 * h #guess for future point
     for i in range(maxIter):
-        midpoints = np.zeros(len(inputs))
-        for j in range(len(inputs)):
-            midpoints[j] = (inputs[j] + initialVals[j]) / 2
+        midpoints = (inputs + initialVals) / 2
+
         k2 = np.array(diffeq(midpoints, *params))
-        newVals = np.zeros(len(inputs))
-        for j in range(len(inputs)):
-            newVals[j] = inputs[j] + k2[j] * h
+
+        newVals = inputs + k2 * h
         #if the new point is close enough to the old point, we can stop iterating
         for j in range(len(inputs)):
             if np.linalg.norm(newVals[j] - initialVals[j]) < tol:
