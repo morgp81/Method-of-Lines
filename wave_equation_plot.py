@@ -14,10 +14,10 @@ sigma = 1
 
 # initial pulse parameters
 x0 = 0.5
-pulse_width = 0.1
+delta = 0.1
 
 # initial conditions
-u = np.exp(-((x - x0) / pulse_width)**2)
+u = np.exp(-((x - x0) / delta)**2)
 v = np.zeros_like(x)
 
 # Dirichlet boundary condition
