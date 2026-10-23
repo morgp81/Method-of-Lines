@@ -137,3 +137,11 @@ plt.title("Burgers Equation at t = 0 and 0.2")
 plt.legend()
 plt.savefig("burgers_equation_final.png")
 plt.show()
+
+plt.plot(x, solution_lax[-1], label="Lax-Friedrichs")
+plt.plot(x, solution_godunov[-1], label="Godunov")
+
+plt.xlim(0.48, 0.52)
+plt.legend()
+plt.grid()
+plt.show()
